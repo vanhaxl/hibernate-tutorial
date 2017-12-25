@@ -23,7 +23,7 @@ public class TestUNIManyToOneMapping {
 
 		try {
 			session.beginTransaction();
-			Course course = session.get(Course.class, 1);
+			Course course = session.get(Course.class, 2);
 
 			Review a = new Review("Good");
 			Review b = new Review("So so");
@@ -38,11 +38,11 @@ public class TestUNIManyToOneMapping {
 			session.getTransaction().commit();
 
 			//delete course algorithm, then it will delete all its reviews
-			session = factory.getCurrentSession();
-			session.beginTransaction();
-			Course course2 = session.get(Course.class, 1);
-			session.delete(course2);
-			session.getTransaction().commit();
+//			session = factory.getCurrentSession();
+//			session.beginTransaction();
+//			Course course2 = session.get(Course.class, 1);
+//			session.delete(course2);
+//			session.getTransaction().commit();
 			
 			
 		} catch (Exception e) {
